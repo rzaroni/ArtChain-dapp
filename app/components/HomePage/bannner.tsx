@@ -1,4 +1,9 @@
+"use client";
+
+import { useAuth } from "@/app/providers/AuthContext";
+
 export default function Banner() {
+    const { login } = useAuth();
     return (
         <div className="flex flex-col items-center justify-center p-10 text-neutral lg:flex-row lg:justify-center gap-20 bg-white">
             {/* Texto */}
@@ -9,8 +14,8 @@ export default function Banner() {
                 <p className="mt-4 text-gray-600">
                     ArtChain é uma plataforma Web3 que conecta artistas e estudantes, promovendo a troca de conhecimento e a democratização da arte por meio de tokenização permissionada e tecnologia blockchain.
                 </p>
-                <button className="mt-6 btn btn-primary">
-                    Join Meetup
+                <button className="mt-6 btn btn-primary" onClick={login}>
+                    Registre-se Agora
                 </button>
             </div>
 

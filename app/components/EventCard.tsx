@@ -6,11 +6,11 @@ interface EventCardProps {
 
 const EventCard: React.FC<EventCardProps> = ({ event }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-4">
+    <div className="bg-white rounded-lg shadow-md p-4 w-80">
       <img
         src={event.imageUrl}
         alt={event.title}
-        className="w-full h-32 object-cover rounded-t-lg"
+        className="w-full h-auto object-cover rounded-t-lg" // Alterado para h-auto
       />
       <div className="mt-4">
         <h2 className="text-lg font-bold text-black">{event.title}</h2>

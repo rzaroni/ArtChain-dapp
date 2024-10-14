@@ -1,9 +1,9 @@
 import { format } from 'date-fns';
-
 const currentDate = new Date();
-const nextWeek = new Date(currentDate.setDate(currentDate.getDate() + 7));
+const nextWeek = new Date(currentDate);
+nextWeek.setDate(currentDate.getDate() + 7);
 
-const formatDate = (date: Date) => format(date, "yyyy-MM-dd");
+const formatDate = (date: Date) => format(date, "dd/MM/yyyy");
 
 export interface Event {
     id: number;
