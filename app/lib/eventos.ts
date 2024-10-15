@@ -23,8 +23,7 @@ export const mockUserEvents: Event[] = [
         date: formatDate(currentDate),
         location: "Online",
         category: "Competição",
-        imageUrl:
-            basepath + "palestrasdearte.jpg",
+        imageUrl: basepath + "palestrasdearte.jpg",
     },
     {
         id: 102,
