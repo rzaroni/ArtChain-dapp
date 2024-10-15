@@ -1,9 +1,46 @@
 "use client";
 
 import { useAuth } from "../providers/AuthContext";
+import axios from 'axios';
 
 export default function NavBar() {
-  const { isLoggedIn, login, logout, account } = useAuth();
+  const { isLoggedIn, login, logout, account, signer } = useAuth();
+
+  const api_url = "https://arbitrum.abakhus.io/api";
+    const api_key = "969d4270b6d6c8138c53d0e005d874fa";
+
+    const getTokensByOwner = async () => {
+        try {
+            const signature = await signer!.signMessage("Please sign this message to verify your ownership");
+
+            const response = await axios.get(`${api_url}/getTokensByOwner`, {
+                params: { owner: account, signature },
+                headers: {
+                    'x-api-key': api_key
+                }
+            });
+
+            const tokens = (response.data as { ret: string[] }).ret;
+            console.log("Tokens: ", tokens.length);
+            for (let i = 0; i < tokens.length; i++) {
+                const tokenId = tokens[i];
+                try {
+                    const metadataResponse = await axios.get(`${api_url}/getMetadataByTokenId`, {
+                        params: { owner: account, tokenId },
+                        headers: {
+                            'x-api-key': api_key
+                        }
+                    });
+                    const metadata = metadataResponse.data;
+                    console.log(`Metadata for Token ${tokenId}: `, metadata);
+                } catch (err) {
+                    console.error(`Error fetching metadata for Token ${tokenId}: `, err);
+                }
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    };
 
   return (
     <div className="navbar bg-base-100 text-neutral">
@@ -45,6 +82,7 @@ export default function NavBar() {
           <div className="flex items-center">
             <span className="mr-2">{account}</span>
             <button className="btn" onClick={logout}>Logout</button>
+            <button className="btn" onClick={getTokensByOwner}>Ver Tokens</button>
           </div>
         ) : (
           <button className="btn" onClick={login}>Login</button>

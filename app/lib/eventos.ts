@@ -12,6 +12,7 @@ export interface Event {
     location: string;
     category: string;
     imageUrl: string;
+    onClick?: () => void;
 }
 
 export const mockUserEvents: Event[] = [

@@ -14,6 +14,7 @@ import { ethers } from 'ethers';
 interface AuthContextType {
   isLoggedIn: boolean;
   account: string | null;
+  signature: string | null;
   signer: ethers.Signer | null;
   login: () => Promise<void>;
   logout: () => void;
@@ -25,6 +26,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [account, setAccount] = useState<string | null>(null);
   const [signer, setSigner] = useState<ethers.Signer | null>(null);
+  const [signature, setSignature] = useState<string | null>(null); // Estado para a assinatura
+  const [tokens, setTokens] = useState<string[]>([]);
 
   const login = async () => {
     if (window.ethereum) {
@@ -41,9 +44,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           setSigner(userSigner);
 
           // Solicita a assinatura da mensagem
-          const signature = await userSigner.signMessage("Sign this message to authenticate with our application.");
-          console.log("Signature response:", signature);  // Exibe a assinatura no console
-
+          const userSignature = await userSigner.signMessage("Sign this message to authenticate with our application.");
+          setSignature(userSignature);  // Armazena a assinatura no estado
           // Após obter a assinatura, define o estado de login como verdadeiro
           setIsLoggedIn(true);
         }
@@ -57,8 +59,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const logout = () => {
     setAccount(null);
-    setSigner(null);
+    setSignature(null);  // Limpa a assinatura ao deslogar
     setIsLoggedIn(false);
+    setSigner(null);
   };
 
   useEffect(() => {
@@ -81,7 +84,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, account, signer, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, account, signer, signature, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
