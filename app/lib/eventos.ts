@@ -5,6 +5,8 @@ nextWeek.setDate(currentDate.getDate() + 7);
 
 const formatDate = (date: Date) => format(date, "dd/MM/yyyy");
 
+const basepath = "https://red-decent-snake-828.mypinata.cloud/ipfs/QmcaivHit5XbgXUW6prrTEp9UA8USnj1Yaaxig57GVYyqY/";
+
 export interface Event {
     id: number;
     title: string;
@@ -22,7 +24,7 @@ export const mockUserEvents: Event[] = [
         location: "Online",
         category: "Competição",
         imageUrl:
-            "https://ifpr.edu.br/irati/wp-content/uploads/sites/14/2024/04/concurso-de-artes-visuais-do-ifpr-irati.jpg",
+            basepath + "palestrasdearte.jpg",
     },
     {
         id: 102,
