@@ -5,6 +5,8 @@ nextWeek.setDate(currentDate.getDate() + 7);
 
 const formatDate = (date: Date) => format(date, "dd/MM/yyyy");
 
+const basepath = "https://assets.zyrosite.com/AVL3ex1eDKUp9aqq/";
+
 export interface Event {
     id: number;
     title: string;
@@ -22,8 +24,7 @@ export const mockUserEvents: Event[] = [
         date: formatDate(currentDate),
         location: "Online",
         category: "Competição",
-        imageUrl:
-            "https://ifpr.edu.br/irati/wp-content/uploads/sites/14/2024/04/concurso-de-artes-visuais-do-ifpr-irati.jpg",
+        imageUrl: basepath + "art13-mxBZxEEzgaT7P9ZK.jpg",
     },
     {
         id: 102,
@@ -31,8 +32,7 @@ export const mockUserEvents: Event[] = [
         date: formatDate(nextWeek),
         location: "Online",
         category: "Competição",
-        imageUrl:
-            "https://ifpr.edu.br/irati/wp-content/uploads/sites/14/2024/04/concurso-de-artes-visuais-do-ifpr-irati.jpg",
+        imageUrl: basepath + "art16-m7VwEqqqayhPpMrl.jpg",
     },
 ];
 
@@ -43,8 +43,7 @@ export const dummyEvents: Event[] = [
         date: formatDate(currentDate),
         location: "Rio de Janeiro",
         category: "Arte",
-        imageUrl:
-            "https://www.infura.io/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6g6hg01fg28j%2FKFPYuRLDjMt5LBDcfzWMU%2F04ecf96366ef87c4f5f3dee724089175%2Fdet-bg.png&w=1080&q=75",
+        imageUrl:	basepath + "art8-YNqyX99DG4u6Qz4n.jpg",
     },
     {
         id: 2,
@@ -52,8 +51,7 @@ export const dummyEvents: Event[] = [
         date: formatDate(nextWeek),
         location: "São Paulo",
         category: "Música",
-        imageUrl:
-            "https://www.infura.io/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6g6hg01fg28j%2FKFPYuRLDjMt5LBDcfzWMU%2F04ecf96366ef87c4f5f3dee724089175%2Fdet-bg.png&w=1080&q=75",
+        imageUrl:	basepath + "art14-d95KEWWW47CVQVD5.jpg",
     },
     {
         id: 3,
@@ -61,8 +59,7 @@ export const dummyEvents: Event[] = [
         date: "2024-10-01",
         location: "Belo Horizonte",
         category: "Fotografia",
-        imageUrl:
-            "https://www.infura.io/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6g6hg01fg28j%2FKFPYuRLDjMt5LBDcfzWMU%2F04ecf96366ef87c4f5f3dee724089175%2Fdet-bg.png&w=1080&q=75",
+        imageUrl:	basepath + "art2-mxBZxEExbptrRyzJ.jpg",
     },
     {
         id: 4,
@@ -70,8 +67,7 @@ export const dummyEvents: Event[] = [
         date: "2024-07-20",
         location: "Rio de Janeiro",
         category: "Arte",
-        imageUrl:
-            "https://www.infura.io/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6g6hg01fg28j%2FKFPYuRLDjMt5LBDcfzWMU%2F04ecf96366ef87c4f5f3dee724089175%2Fdet-bg.png&w=1080&q=75",
+        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
     },
     {
         id: 5,
@@ -79,8 +75,7 @@ export const dummyEvents: Event[] = [
         date: "2024-11-10",
         location: "Rio de Janeiro",
         category: "Arte",
-        imageUrl:
-            "https://www.infura.io/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6g6hg01fg28j%2FKFPYuRLDjMt5LBDcfzWMU%2F04ecf96366ef87c4f5f3dee724089175%2Fdet-bg.png&w=1080&q=75",
+        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
     },
     {
         id: 6,
@@ -88,8 +83,7 @@ export const dummyEvents: Event[] = [
         date: "2024-09-15",
         location: "Petrópolis",
         category: "Arte",
-        imageUrl:
-            "https://www.infura.io/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6g6hg01fg28j%2FKFPYuRLDjMt5LBDcfzWMU%2F04ecf96366ef87c4f5f3dee724089175%2Fdet-bg.png&w=1080&q=75",
+        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
     },
     {
         id: 7,
@@ -97,8 +91,7 @@ export const dummyEvents: Event[] = [
         date: "2024-08-30",
         location: "Curitiba",
         category: "Fotografia",
-        imageUrl:
-            "https://www.infura.io/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6g6hg01fg28j%2FKFPYuRLDjMt5LBDcfzWMU%2F04ecf96366ef87c4f5f3dee724089175%2Fdet-bg.png&w=1080&q=75",
+        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
     },
     {
         id: 8,
@@ -106,8 +99,7 @@ export const dummyEvents: Event[] = [
         date: "2024-10-20",
         location: "Salvador",
         category: "Arte",
-        imageUrl:
-            "https://www.infura.io/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6g6hg01fg28j%2FKFPYuRLDjMt5LBDcfzWMU%2F04ecf96366ef87c4f5f3dee724089175%2Fdet-bg.png&w=1080&q=75",
+        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
     },
     {
         id: 9,
@@ -115,8 +107,7 @@ export const dummyEvents: Event[] = [
         date: formatDate(currentDate),
         location: "Rio de Janeiro",
         category: "Teatro",
-        imageUrl:
-            "https://www.infura.io/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6g6hg01fg28j%2FKFPYuRLDjMt5LBDcfzWMU%2F04ecf96366ef87c4f5f3dee724089175%2Fdet-bg.png&w=1080&q=75",
+        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
     },
     {
         id: 10,
@@ -124,7 +115,6 @@ export const dummyEvents: Event[] = [
         date: formatDate(nextWeek),
         location: "Online",
         category: "Internacional",
-        imageUrl:
-            "https://www.infura.io/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F6g6hg01fg28j%2FKFPYuRLDjMt5LBDcfzWMU%2F04ecf96366ef87c4f5f3dee724089175%2Fdet-bg.png&w=1080&q=75",
+        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
     },
 ];
