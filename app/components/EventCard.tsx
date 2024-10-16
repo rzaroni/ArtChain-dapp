@@ -10,8 +10,8 @@ interface EventCardProps {
 
 const EventCard: React.FC<EventCardProps> = ({ event, isLoggedIn }) => {
 
-    const api_url = "https://arbitrum.abakhus.io/api";
-    const api_key = "969d4270b6d6c8138c53d0e005d874fa";
+    const api_url = process.env.API_URL;
+    const api_key = process.env.API_KEY;
 
     const { account, signer } = useAuth();
     const getTokensByOwner = async () => {

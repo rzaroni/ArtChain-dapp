@@ -9,25 +9,9 @@ import axios from 'axios';
 export default function Home() {
   const { isLoggedIn, signature, account } = useAuth();
 
-  const handleTokens = async () => {
-    try {
-      const response = await axios.get(`https://arbitrum.abakhus.io/api/getTokensByOwner`, {
-        params: { owner: account, signature: signature },
-        headers: {
-          'accept': 'application/json',
-          'x-api-key': '969d4270b6d6c8138c53d0e005d874fa',
-        },
-      });
-      console.log(response);
-    } catch (error) {
-      console.error('Error fetching tokens:', error);
-    }
-  }
-
   return (
     <div className="bg-white">
       <Banner />
-      <button className="btn mt-1" onClick={handleTokens}>Button</button>
       <div className="container mx-auto p-6" >
         {isLoggedIn ? (<section className="mb-12">
           <div className="text-center mb-6">
