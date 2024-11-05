@@ -21,7 +21,7 @@ export default function Banner() {
 
             {/* Imagem */}
             <div className="w-full lg:w-auto flex justify-center">
-                <img src="https://media-gru1-1.cdn.whatsapp.net/v/t61.24694-24/460357995_548177247874655_6537814048328547224_n.jpg?ccb=11-4&oh=01_Q5AaIIaQdlVaSE8aiZwW7kPR8m93-_3B7gwmlLOKNIhKKJ0b&oe=67123DE0&_nc_sid=5e03e0&_nc_cat=103" alt="People on a bike" className="max-w-full h-auto" />
+                <img src="../favicon.ico" alt="ArtChain Icon" className="max-w-full h-auto" />
             </div>
         </div>
     )
