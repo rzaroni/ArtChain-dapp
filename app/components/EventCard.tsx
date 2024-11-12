@@ -63,7 +63,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, isLoggedIn }) => {
             const response = await axios.post(`${api_url}/mint`, {
                 name: "ArtChain",
                 description: `Token emitido para o evento ${event.title} como prova de participação.`,
-                image: "https://ipfs.io/ipfs/QmPzdYgHLZw3a3HpxkWGgKdw6ZCS2PZBxPkL4roE88wLF3",
+                image: `${event.imageUrl}`,
                 owner: account,
                 data:
                 `{
