@@ -6,6 +6,8 @@ nextWeek.setDate(currentDate.getDate() + 7);
 const formatDate = (date: Date) => format(date, "dd/MM/yyyy");
 
 const basepath = "https://assets.zyrosite.com/AVL3ex1eDKUp9aqq/";
+const basepathII = "https://ipfs.io/ipfs/";
+
 
 export interface Event {
     id: number;
@@ -67,7 +69,7 @@ export const dummyEvents: Event[] = [
         date: "2024-07-20",
         location: "Rio de Janeiro",
         category: "Arte",
-        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
+        imageUrl:	basepathII + "QmRfiGAx61bwY3oEgpn3pD2ANmhCuLJTsaw2ANDVut25H5",
     },
     {
         id: 5,
@@ -75,7 +77,7 @@ export const dummyEvents: Event[] = [
         date: "2024-11-10",
         location: "Rio de Janeiro",
         category: "Arte",
-        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
+        imageUrl:	basepathII + "QmSYAVEVNK8UfPayJr1y3N6sMPALvRgecv5RxxKKeSQzNq",
     },
     {
         id: 6,
@@ -83,7 +85,7 @@ export const dummyEvents: Event[] = [
         date: "2024-09-15",
         location: "Petrópolis",
         category: "Arte",
-        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
+        imageUrl:	basepathII + "QmXgQvoGhAwZxknBFWk1ZYKcLiNbvqP8TV2qSGviPLgTU7",
     },
     {
         id: 7,
@@ -91,7 +93,7 @@ export const dummyEvents: Event[] = [
         date: "2024-08-30",
         location: "Curitiba",
         category: "Fotografia",
-        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
+        imageUrl:	basepathII + "QmZBCNNGbsfPQLoGLtc7Kjce7uRKeGZ8HDAsBLLfPnt8Xr",
     },
     {
         id: 8,
@@ -99,7 +101,7 @@ export const dummyEvents: Event[] = [
         date: "2024-10-20",
         location: "Salvador",
         category: "Arte",
-        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
+        imageUrl:	basepathII + "QmZhhets6FMRgeQLzVcuHxDYE766wyChYZz8Z45ueXwChA",
     },
     {
         id: 9,
@@ -107,7 +109,7 @@ export const dummyEvents: Event[] = [
         date: formatDate(currentDate),
         location: "Rio de Janeiro",
         category: "Teatro",
-        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
+        imageUrl:	basepathII + "QmUtJndfmhT5RCmx2H2q7q5hUurANspGrQpSwzCoYFEVTj",
     },
     {
         id: 10,
@@ -115,6 +117,6 @@ export const dummyEvents: Event[] = [
         date: formatDate(nextWeek),
         location: "Online",
         category: "Internacional",
-        imageUrl:	basepath + "art99-dOqyXrrMLlHZRrML.jpg",
+        imageUrl:	basepathII + "QmSEbFUf9Z7PutJpqkdMwHyXyczCYZWsSqmq3bsRttrBER",
     },
 ];
